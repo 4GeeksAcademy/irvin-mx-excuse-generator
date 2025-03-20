@@ -7,16 +7,36 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
-  const excuses = ["escusa1","escusa2","escusa3","escusa4","escusa5"]
+  const outPutExcuseArray = []
+  let outputString = ""
 
-  let randomExcuseNumber =  Math.floor(Math.random() * excuses.length)
+  let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+  let action = ['ate', 'peed', 'crushed', 'broke'];
+  let what = ['my homework', 'my phone', 'the car'];
+  let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
-  let randomExcuse = excuses[randomExcuseNumber]
+  function randomNumberGenerator(array){
+    return Math.floor(Math.random()*array.length)
+  }
+
+  //This code below I think I can improve with a for loop in the future/start
+  let whoRandomChoiceWiner = who[randomNumberGenerator(who)]
+  let actionRandomChoiceWiner = action[randomNumberGenerator(action)]
+  let whatoRandomChoiceWiner = what[randomNumberGenerator(what)]
+  let whenRandomChoiceWiner = when[randomNumberGenerator(when)]
+
+  //Push answer to new array
+  outPutExcuseArray.push(whoRandomChoiceWiner)
+  outPutExcuseArray.push(actionRandomChoiceWiner)
+  outPutExcuseArray.push(whatoRandomChoiceWiner)
+  outPutExcuseArray.push(whenRandomChoiceWiner)//This code below I think I can improve with a for loop in the future/end
+
+  outputString = outPutExcuseArray.join(" ")
 
   // I need to create the h1 element in the DOM
   let heading = document.createElement("h1")
-  heading.innerText = randomExcuse
+
+  heading.innerText = outputString
 
   const targetDiv = document.getElementById("randomDivContainer")
 
